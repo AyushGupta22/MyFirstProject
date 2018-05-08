@@ -45,7 +45,8 @@ body{
 <%
 out.print("<h3>"+abc.getName()+"</h3>");
 out.print("<img src=\"images/"+abc.getId()+".jpg\" />");
-out.print("<a href='buy.jsp?id="+abc.getId()+"'>Buy Now</a>");
+out.print("<a href='buy.jsp?itemId="+abc.getId()+"'>Buy Now </a>");
+out.print("<a href='review.jsp?id="+abc.getId()+"'> Review</a>");
 out.print("<div class = 'recommend'><h2>Recommended Items</h2>");
 for(int i=1;i<items.size();i++){
 	abc = items.get(i);

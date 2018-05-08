@@ -4,7 +4,84 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fetch {
+import javax.servlet.http.HttpServlet;
+
+public class Fetch extends HttpServlet {
+
+	public static boolean validate(LoginBean bean){
+		boolean status=false;
+               
+		
+        Connection con=null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            con= DriverManager.getConnection("jdbc:mysql:///recommend","root","");
+			Statement stmt=con.createStatement();
+			PreparedStatement ps=con.prepareStatement("select * from user where user_name=? and password=?");
+			ps.setString(1,bean.getUser());
+			ps.setString(2, bean.getPass());
+			
+			ResultSet rs=ps.executeQuery();
+                        status=rs.next();
+                       // HttpSession session = request.getSession();
+                       if(status)
+                            bean.setId(rs.getInt(1));
+                       
+       // session.setAttribute("MyAttribute", "test value");
+			
+			System.out.println(status);
+		}catch(Exception e){}
+		return status;
+	}
+	public static boolean orderInsert(OrderBean obj){
+		boolean status = false;;
+		Connection con=null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            con= DriverManager.getConnection("jdbc:mysql:///recommend","root","");
+			Statement stmt=con.createStatement();
+			PreparedStatement ps=con.prepareStatement("Insert into order_info(user_id,item_id,order_time) values(?,?,?)");
+			ps.setInt(1,obj.getOrderId());
+			ps.setInt(2, obj.getItemId());
+			ps.setString(3, "2018-06-07");
+			
+			ps.execute();
+            status = true;           // HttpSession session = request.getSession();
+           
+                       
+       // session.setAttribute("MyAttribute", "test value");
+			
+			System.out.println(status);
+			System.out.println(obj.getOrderId());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return status;
+	}
+	public static boolean reviewInsert(ReviewBean obj){
+		boolean status = false;;
+		Connection con=null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            con= DriverManager.getConnection("jdbc:mysql:///recommend","root","");
+			Statement stmt=con.createStatement();
+			PreparedStatement ps=con.prepareStatement("Insert into user_item_review_rating(user_id,item_id,review) values(?,?,?)");
+			ps.setInt(1,obj.getUserId());
+			ps.setInt(2, obj.getId());
+			ps.setString(3, obj.getReview());
+			
+			ps.execute();
+            status = true;           // HttpSession session = request.getSession();
+           
+                       
+       // session.setAttribute("MyAttribute", "test value");
+			
+			System.out.println(status);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return status;
+	}
 
 	public static List<FetchBean> itemFetch(FetchBean obj){
 		List<FetchBean> items = new ArrayList<FetchBean>();

@@ -31,7 +31,10 @@ body{
 </style>
 </head>
 <body>
-<div class="header"><center><h1>IwantThat</h1></center></div>
+<div class="header">
+	<center><h1>IwantThat</h1></center>
+	<a href="login.jsp" style="padding:5px 10px;background:red;color:black;">Login</a>
+</div>
 <div class = "mainBody">
 	<div class="popular">
 		<h2>Popular Searches</h2>
