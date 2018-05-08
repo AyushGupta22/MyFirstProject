@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServlet;
 
 public class Fetch extends HttpServlet {
+	
 
 	public static boolean validate(LoginBean bean){
 		boolean status=false;
@@ -83,7 +84,7 @@ public class Fetch extends HttpServlet {
 		return status;
 	}
 
-	public static List<FetchBean> itemFetch(FetchBean obj){
+	public static List<FetchBean> itemFetch(FetchBean obj,List<ReviewBean> itemReviews){
 		List<FetchBean> items = new ArrayList<FetchBean>();
                
 		
@@ -102,6 +103,15 @@ public class Fetch extends HttpServlet {
             	obj1.setId(itemId);
             	obj1.setName(itemName);
             	items.add(obj1);
+            }
+            ps=con.prepareStatement("select review from user_item_review_rating where item_id = ?");
+			ps.setInt(1,id);
+			rs=ps.executeQuery();
+            while(rs.next()){
+            	String review = rs.getString(1);
+            	ReviewBean obj1 = new ReviewBean();
+            	obj1.setReview(review);
+            	itemReviews.add(obj1);
             }
             int n=0;
             ps=con.prepareStatement("select count(*) from item");
