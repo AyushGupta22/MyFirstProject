@@ -6,38 +6,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Testing</title>
 <style>
-	.popular{
+body{
+	margin: 0px;
+}
+.header{
+	padding: 20px;
+    background: lightblue;
+    margin: 0px;
+}
+	.popular,.electronic,.new,.clothes{
 		width:100%;
+	}
+	h2{
+		margin: 0;
+    	padding: 10px 20px;
+    	background-color: lightgoldenrodyellow;
 	}
 	img{
 		max-width:24%;
+		height:250px;
+		padding:40px;
 		
 	}
 </style>
 </head>
 <body>
-<div class="header"><h1>IwantThat</h1></div>
+<div class="header"><center><h1>IwantThat</h1></center></div>
 <div class = "mainBody">
 	<div class="popular">
 		<h2>Popular Searches</h2>
-		<a href="fetch.jsp?id=1"><img src="images/1.jpeg" alt="img1"/></a>
+		<a href="fetch.jsp?id=1"><img src="images/1.jpg" alt="img1"/></a>
 		<a href="fetch.jsp?id=2"><img src="images/2.jpg" alt="img1"/></a>
-		<a href="fetch.jsp?id=3"><img src="images/3.jpeg" alt="img1"/></a>
-		<a href="fetch.jsp?id=4"><img src="images/4.jpeg" alt="img1"/></a>
+		<a href="fetch.jsp?id=12"><img src="images/12.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=10"><img src="images/10.jpg" alt="img1"/></a>
 	</div>
 	<div class = "electronic">
 		<h2>Electronics</h2>
-		<a href="fetch.jsp?id=1"><img src="images/1.jpeg" alt="img1"/></a>
+		<a href="fetch.jsp?id=1"><img src="images/1.jpg" alt="img1"/></a>
 		<a href="fetch.jsp?id=2"><img src="images/2.jpg" alt="img1"/></a>
-		<a href="fetch.jsp?id=3"><img src="images/3.jpeg" alt="img1"/></a>
-		<a href="fetch.jsp?id=4"><img src="images/4.jpeg" alt="img1"/></a>
+		<a href="fetch.jsp?id=3"><img src="images/3.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=4"><img src="images/4.jpg" alt="img1"/></a>
 	</div>
 	<div class="New">
 		<h2>New in the market</h2>
-		<a href="fetch.jsp?id=1"><img src="images/1.jpeg" alt="img1"/></a>
-		<a href="fetch.jsp?id=2"><img src="images/2.jpg" alt="img1"/></a>
-		<a href="fetch.jsp?id=3"><img src="images/3.jpeg" alt="img1"/></a>
-		<a href="fetch.jsp?id=4"><img src="images/4.jpeg" alt="img1"/></a>
+		<a href="fetch.jsp?id=11"><img src="images/11.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=7"><img src="images/7.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=13"><img src="images/13.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=14"><img src="images/14.jpg" alt="img1"/></a>
+	</div>
+	<div class="clothes">
+		<h2>Clothes</h2>
+		<a href="fetch.jsp?id=8"><img src="images/8.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=9"><img src="images/9.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=12"><img src="images/12.jpg" alt="img1"/></a>
+		<a href="fetch.jsp?id=11"><img src="images/11.jpg" alt="img1"/></a>
 	</div>
 </div>
 </body>

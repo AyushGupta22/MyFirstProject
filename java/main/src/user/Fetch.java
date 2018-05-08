@@ -20,8 +20,10 @@ public class Fetch {
 			ResultSet rs=ps.executeQuery();
             while(rs.next()){
             	int itemId = rs.getInt(1);
+            	String itemName = rs.getString(2);
             	FetchBean obj1 = new FetchBean();
             	obj1.setId(itemId);
+            	obj1.setName(itemName);
             	items.add(obj1);
             }
             int n=0;
