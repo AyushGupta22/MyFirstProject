@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Testing</title>
+<title>Iwantthat</title>
 <style>
 body{
 	margin: 0px;
@@ -33,7 +33,15 @@ body{
 <body>
 <div class="header">
 	<center><h1>IwantThat</h1></center>
-	<a href="login.jsp" style="padding:5px 10px;background:red;color:black;">Login</a>
+	<% if(session.getAttribute("session") == null){ %>
+		<a href="login.jsp" style="padding:5px 10px;background:red;color:black;">Login</a>
+	<% }else{
+		out.print("<b style='padding:5px 10px;background:blue;color:black;'>"+session.getAttribute("userName")+"</b>");
+		%>
+		<a href="logout.jsp" style=" padding:5px 10px;background:red;color:black;">logout</a>
+		<%
+	}
+		%>
 </div>
 <div class = "mainBody">
 	<div class="popular">

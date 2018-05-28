@@ -40,6 +40,15 @@ body{
 		padding:40px;
 		
 	}
+	#buy,#review{
+		background-color: #2874f0;
+		padding:5px 10px;
+		margin-left:5px;
+		margin-bottom:10px;
+		text-decoration: none;
+		font-weight: bold;
+		color:white;
+	}
 </style>
 </head>
 <body>
@@ -47,8 +56,8 @@ body{
 <%
 out.print("<h3>"+abc.getName()+"</h3>");
 out.print("<img src=\"images/"+abc.getId()+".jpg\" />");
-out.print("<a href='buy.jsp?itemId="+abc.getId()+"'>Buy Now </a>");
-out.print("<a href='review.jsp?id="+abc.getId()+"'> Review</a>");
+out.print("<a id='buy' href='buy.jsp?itemId="+abc.getId()+"'>Buy Now </a>");
+out.print("<a id='review' href='review.jsp?id="+abc.getId()+"'> Review</a>");
 out.print("<div class = 'recommend'><h2>Recommended Items</h2>");
 for(int i=1;i<items.size();i++){
 	abc = items.get(i);
@@ -58,7 +67,7 @@ out.print("</div>");
 out.print("<div class = 'reviews'><h2>Reviews</h2>");
 for(int i=0;i<itemReviews.size();i++){
 	ReviewBean review = itemReviews.get(i);
-	out.print("<p>"+review.getReview()+"</p>");
+	out.print("<p style='margin-left:10px;'>"+review.getReview()+"</p>");
 }
 out.print("</div>");
 %>
