@@ -14,7 +14,7 @@ body{
     background: lightblue;
     margin: 0px;
 }
-	.popular,.electronic,.new,.clothes{
+	.popular,.electronic,.new,.books{
 		width:100%;
 	}
 	h2{
@@ -57,8 +57,8 @@ body{
 		<a href="fetch.jsp?id=13"><img src="images/13.jpg" alt="img1"/></a>
 		<a href="fetch.jsp?id=14"><img src="images/14.jpg" alt="img1"/></a>
 	</div>
-	<div class="clothes">
-		<h2>Clothes</h2>
+	<div class="books">
+		<h2>Books</h2>
 		<a href="fetch.jsp?id=8"><img src="images/8.jpg" alt="img1"/></a>
 		<a href="fetch.jsp?id=9"><img src="images/9.jpg" alt="img1"/></a>
 		<a href="fetch.jsp?id=12"><img src="images/12.jpg" alt="img1"/></a>
